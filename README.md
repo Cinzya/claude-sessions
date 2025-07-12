@@ -156,7 +156,7 @@ Shows the status of the current active session.
 - Lists current goals and tasks
 - Reminds of available commands
 
-### `/project:session-load`
+### `/project:session-load` [name]
 Loads a saved session by its name or file identifier.
 
 **What it does:**
