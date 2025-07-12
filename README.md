@@ -21,6 +21,9 @@ These commands extend Claude Code's built-in functionality with project-specific
 # Or without a name
 /project:session-start
 
+# Load an existing session with name
+/project:session-load 2025-07-11-1121
+
 # Update progress during development (with optional notes)
 /project:session-update Implemented OAuth with Google
 # Or without notes (auto-summarizes recent activity)
@@ -45,7 +48,9 @@ commands/                       # Custom command directory
 ├── session-end.md             # Command for ending and summarizing
 ├── session-current.md         # Command for viewing current status
 ├── session-list.md            # Command for listing all sessions
+├── session-load.md            # Command to load an existing session with name
 └── session-help.md            # Command for showing help
+
 
 sessions/                      # Session storage directory
 ├── .current-session          # Tracks the active session filename
@@ -150,6 +155,16 @@ Shows the status of the current active session.
 - Shows recent updates
 - Lists current goals and tasks
 - Reminds of available commands
+
+### `/project:session-load`
+Loads a saved session by its name or file identifier.
+
+**What it does:**
+- Accepts a session name as $ARGUMENT
+- Checks for a matching .md file in .claude/sessions/
+- Prompts user to choose from available sessions if the file isn't found
+- Updates .current-session to point to the selected session
+- Confirms session has been loaded and offers to resume work
 
 ### `/project:session-list`
 Lists all session files with summaries.
