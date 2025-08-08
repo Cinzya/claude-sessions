@@ -1,3 +1,7 @@
+---
+description: Show the current session status
+---
+
 Show the current session status by:
 
 1. Check if `.claude/sessions/.current-session` exists
